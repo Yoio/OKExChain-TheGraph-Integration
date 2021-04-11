@@ -27,23 +27,6 @@ For detailed instructions and more context, check out the [Getting Started Guide
     subgraphs.subgraph s
   WHERE d.deployment = ds.subgraph::text AND v.deployment = d.deployment AND v.subgraph = s.id;
 
-
-cargo run -p graph-node --release -- \
-  --postgres-url postgresql://graph-node:let-me-in@localhost:5432/graph-node \
-  --ethereum-rpc mainnet:http://18.167.77.79:26659 \
-  --ipfs 127.0.0.1:5001
-  --node-id william
-
-curl https://mainnet.infura.io/v3/2e99a61310f94b1f86f7a1b9e3acd20f \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x1b4", true],"id":1}'
-
-curl http://18.167.133.255:26659 \
--X POST \
--H "Content-Type: application/json" \
--d '{"jsonrpc":"2.0","method":"eth_getBlockByNumber","params":["0x111e7e", true],"id":1}'
-
 ## Quick Start
 
 ### Prerequisites
